@@ -1,0 +1,12 @@
+input,textarea,select,button{color:#000;background:#fff;border:1px solid #888;font:inherit}
+::file-selector-button{color:#000}
+.actions{margin:8px 0}
+body{max-width:960px;margin:16px auto;padding:0 16px;font-family:sans-serif}
+#view canvas{width:100%;height:auto!important;display:block}
+label{display:block;margin:6px 0}
+textarea{width:100%;box-sizing:border-box}
+fieldset{margin:12px 0}
+#cropcv{width:min(320px,70vw);height:auto!important;cursor:grab;touch-action:none;display:block}
+#zoom{width:100%}
+#picker{padding:0;border:0;margin:0;inset:auto 16px auto auto;top:50%;translate:0 -50%}
+emoji-picker{--emoji-font-family:"Noto Color Emoji"}

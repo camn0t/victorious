@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TheSlap Status Maker</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="js/main.js"></script>
+</head><body>
+<h1>TheSlap status maker</h1>
+<main>
+  <div id="view"></div>
+  <div class="actions">
+    <button type="button" id="rec">Download video</button>
+    <button type="button" id="replay">Replay</button>
+  </div>
+  <form onsubmit="return false">
+    <fieldset><legend>Profile</legend>
+      <label>Name <input id="name" placeholder="Tori Vega"></label>
+      <label>Photo <input id="photo" type="file" accept="image/*"></label>
+    </fieldset>
+    <fieldset><legend>Post</legend>
+      <label>Status <textarea id="status" rows="3" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dignissim nibh, tincidunt dapibus lacus. Integer euismod ultricies auctor."></textarea></label>
+      <div>
+        <label>Feeling <input id="mood" placeholder="Neutral"></label>
+        <label>Emoji <span><input id="emoji" placeholder="😐"><button type="button" popovertarget="picker" title="Pick an emoji"><img id="emojiPrev" width="24" height="24" alt="pick"></button></span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Look</legend>
+      <div>
+        <label>Phone color <input id="color" type="color" value="#1f8fd6"></label>
+        <label>Background <select id="bgsel"></select></label>
+      </div>
+      <label>Or upload a background <input id="bgfile" type="file" accept="image/*"></label>
+    </fieldset>
+  </form>
+</main>
+<div id="picker" popover><emoji-picker emoji-version="15.1"></emoji-picker></div>
+<dialog id="crop">
+  <p>Drag to move · scroll or slide to zoom</p>
+  <canvas id="cropcv" width="480" height="480"></canvas>
+  <input id="zoom" type="range" min="1" max="5" step=".01" value="1" aria-label="Zoom">
+  <div><button type="button" id="cropCancel">Cancel</button><button type="button" id="cropOk">Use photo</button></div>
+</dialog>
+</body></html>
